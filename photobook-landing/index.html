@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "myApp">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Document</title>
+</head>
+<body>
+	<nav>
+		<div class="left">
+			<div class="dropdown">
+				<span><i class="fa fa-bars" aria-hidden="true"></i></span>
+				
+			</div>
+			<div class="logo">
+				<p>PHOT<span><img src="img/aperture.png" alt=""></span>BOOK</p>
+			</div>
+		</div>
+		
+		<div class="right">
+			<div class="contact">+380(97)-123-45-67</div>
+			<div class="login"><i class="fa fa-sign-in" aria-hidden="true"></i></div>
+		</div>
+	</nav>
+
+	<div id="main-banner">
+		<h1>CREATE YOUR OWN PHOTOSTORY</h1>
+		<div class="center">
+			<span>Make your photobook online</span>
+			<p class = "btn">MAKE YOUR PHOTOBOOK</p>
+		</div>
+		<div class="dropdown-content">
+			<a href="#advantage">About</a>
+			<a href="#price">Prices</a>
+			<a href="#testimonials">Testimonials</a>
+			<a href="#info">Payment & Shipping</a>
+			<a href="#categories">Contacts</a>
+					
+		</div>
+	</div>
+	
+	<div id="steps">
+		<div id="steps-container">
+			<div>
+				<div class="circle">
+					<img src="img/step-1.png" alt="">
+				</div>
+				<h3>Download photos</h3>
+			</div>
+			<div>
+				<div class="circle">
+					<img src="img/step-2.png" alt="">
+				</div>
+				<h3>Design your photobook</h3>
+			</div>
+			<div>
+				<div class="circle">
+					<img src="img/step-3.png" alt="">
+				</div>
+				<h3>Pay for service</h3>
+			</div>
+			<div>
+				<div class="circle">
+					<img src="img/step-4.png" alt="">
+				</div>
+				<h3>Get your photobook</h3>
+			</div>
+		</div>
+	</div>
+
+	<div id="advantage">
+		<h1>Advantage</h1>
+		<div class="advantage-container">
+			<div>
+				<img src="img/img-1.png" alt="">
+				<h3>Import photos from your social networks</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac est et nisl molestie dignissim.</p>
+			</div>
+			<div>
+				<img src="img/img-2.png" alt="">
+				<h3>Photo editing</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac est et nisl molestie dignissim.</p>
+			</div>
+			<div>
+				<img src="img/img-3.png" alt="">
+				<h3>Templates</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac est et nisl molestie dignissim.</p>
+			</div>
+		</div>
+		<div class = "padding">
+			<p class = "btn">MAKE YOUR PHOTOBOOK</p>
+		</div>
+	</div>
+
+	<div id="price">
+		<h1>Ready solutions</h1>
+
+		<div id="books-container" ng-controller = "priceController">
+			<div class = "book" ng-repeat = "book in books">
+				<div class="main">
+					<h3>{{book.title}}</h3>
+					<div class="inner">
+						<ul class = "list">
+							<li >{{book.size}}</li>
+							<li>{{book.pages}}</li>
+							<li>{{book.binding}}</li>
+							<li>{{book.cover}}</li>
+							<li class = "li">{{book.shipping}}</li>
+						</ul>
+						<p>{{book.price | currency}}</p>
+					</div>
+				<p style = "padding: 20px">Make your {{book.title}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="testimonials">
+		<div id="testimonials-container">
+			<h1>Testimonials</h1>
+			<div class="photographer-info">
+				<img src="img/man.png" alt="">
+				<div class="name">
+					<h3>John Doe</h3>
+					<p>Wedding photographer</p>
+				</div>
+			</div>
+			
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper lacus ultricies nisi semper ultricies. Duis ut elit eleifend, molestie sapien sed, consectetur ex. Morbi sollicitudin ut dui at vehicula.
+			<br>
+			Sed ac varius purus, nec facilisis arcu. Praesent finibus quam et libero egestas, eleifend porta sapien semper. Aliquam congue fermentum dolor non imperdiet. </p>
+			<span>Next testimonial >>></span>
+			<p class = "btn">MAKE YOUR PHOTOBOOK</p>
+		</div>
+	</div>
+	
+	<div id="info">
+		<div class="info-container">
+			<div class="block">
+				<div class="head">
+					<h3>Terms</h3>
+				</div>
+				<div class="info-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper lacus ultricies. <br> <br> Duis ut elit eleifend, molestie sapien sed, consectetur ex. Morbi sollicitudin.</p>
+				</div>
+			</div>
+			<div class="block">
+				<div class="head">
+					<h3>Payment</h3>
+				</div>
+				<div class="info-body">
+					<p>Payment methods:</p>
+					<ul>
+						<li>VISA</li>
+						<li>MasterCard</li>
+						<li>PayPal</li>
+						<li>American Express</li>
+					</ul>
+				</div>
+			</div>
+			<div class="block">
+				<div class="head">
+					<h3>Shipping</h3>
+				</div>
+				<div class="info-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper lacus ultricies nisi semper ultricies. Duis ut elit eleifend, molestie sapien sed, consectetur ex.</p> <br>
+					<span>Free shipping for PremiumBook</span>
+				</div>
+			</div>
+		</div>
+		<p class = "btn">MAKE YOUR PHOTOBOOK</p>
+	</div>
+	
+	<footer>
+		<div id="categories">
+			<ul>
+				<li><a href="">About us</a></li>
+				<li><a href="">Careers</a></li>
+				<li><a href="">Help</a></li>
+				<li><a href="">Press</a></li>
+			</ul>
+			<ul>
+				<li><a href="">Terms</a></li>
+				<li><a href="">Payment</a></li>
+				<li><a href="">Shipping</a></li>
+				<li><a href="">Contacts</a></li>
+			</ul>
+			<ul>
+				<li><a href="">LightBook</a></li>
+				<li><a href="">ClassicBook</a></li>
+				<li><a href="">PremiumBook</a></li>
+			</ul>
+			<ul id="links">
+				<i class="fa fa-facebook-square" aria-hidden="true"></i>
+				<i class="fa fa-instagram" aria-hidden="true"></i>
+				<i class="fa fa-pinterest" aria-hidden="true"></i>
+				<i class="fa fa-vk" aria-hidden="true"></i>
+			</ul>
+		</div>
+		
+		<p id="copyright">© 2015 Photobook. All rights reserved</p>
+	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="js/controllers/priceController.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
