@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Tick Tack Toe</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="grid"></div>
+        <div class="game_mode">
+          <p>Choose mode</p>
+          <div class="btn-group">
+            <button class="single-player mode">Single player</button>
+            <button class="multi-player mode">Multiplayer</button>
+          </div>
+        </div>
+        <div class="game_menu">
+          <p>Choose player</p>
+          <div class="btn-group">
+            <button class="x player">X</button>
+            <button class="o player">O</button>
+          </div>
+        </div>
+        <div class="results_info">
+          <p class="results">result</p>
+          <div class="btn-group">
+            <button class="restart">Play again?</button>
+          </div>
+        </div>
+        <p class="info">Let's the battle begine!</p>
+      </div>
+      
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+       <circle class="border-circle" cx="85" cy="40" r="10">
+          <animateTransform attributeType="xml"
+                            attributeName="transform"
+                            type="rotate"
+                            from="0 85 40"
+                            to="360 85 40"
+                            dur="40s"
+                            repeatCount="indefinite"/>
+        </circle>
+        <circle class="outer-circle" cx="85" cy="40" r="10">
+          <animateTransform attributeType="xml"
+                            attributeName="transform"
+                            type="rotate"
+                            from="0 85 40"
+                            to="360 85 40"
+                            dur="40s"
+                            repeatCount="indefinite"/>
+        </circle>
+        <circle class="inner-circle" cx="85" cy="40" r="8">
+          <animateTransform attributeType="xml"
+                            attributeName="transform"
+                            type="rotate"
+                            from="0 85 40"
+                            to="-360 85 40"
+                            dur="40s"
+                            repeatCount="indefinite"/>
+        </circle>
+        
+        <circle class="border-circle" cx="15" cy="10" r="10">
+          <animateTransform attributeType="xml"
+                            attributeName="transform"
+                            type="rotate"
+                            from="0 15 10"
+                            to="360 15 10"
+                            dur="40s"
+                            repeatCount="indefinite"/>
+        </circle>
+        <circle class="outer-circle" cx="15" cy="10" r="10">
+          <animateTransform attributeType="xml"
+                            attributeName="transform"
+                            type="rotate"
+                            from="0 15 10"
+                            to="-360 15 10"
+                            dur="40s"
+                            repeatCount="indefinite"/>
+        </circle>
+        <circle class="inner-circle2" cx="15" cy="10" r="8">
+          <animateTransform attributeType="xml"
+                            attributeName="transform"
+                            type="rotate"
+                            from="0 15 10"
+                            to="360 15 10"
+                            dur="40s"
+                            repeatCount="indefinite"/>
+        </circle>
+        <circle class="center-circle" cx="15" cy="10" r="4">
+          <animateTransform attributeType="xml"
+                            attributeName="transform"
+                            type="rotate"
+                            from="0 15 10"
+                            to="360 15 10"
+                            dur="40s"
+                            repeatCount="indefinite"/>
+        </circle>
+      </svg>
+      <script src="js/script.js"></script>
+</body>
+</html>

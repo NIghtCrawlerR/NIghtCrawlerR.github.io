@@ -1,0 +1,101 @@
+body {
+  background: #000;
+  height: 100%;
+  font-family: 'Gugi', cursive; 
+  overflow: hidden;
+}
+
+.wrap {
+  width: 555px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 150px; }
+
+.grid {
+  width: 555px;
+  margin: 0 auto;
+  background-color: #000; }
+
+.info {
+  color: #00EA94; }
+
+.game_menu, .results_info, .game_mode {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 555px;
+  margin-top: -5px; }
+  .game_menu p, .results_info p, .game_mode p {
+    text-align: center;
+    margin-top: 150px;
+    font-size: 50px;
+    color: #00EA94;
+    text-shadow: 0 0 25px #00EA94; }
+  .game_menu .btn-group, .results_info .btn-group, .game_mode .btn-group {
+    margin: 0 auto;
+    width: max-content; }
+    .game_menu .btn-group button, .results_info .btn-group button, .game_mode .btn-group button {
+      background-color: transparent;
+      color: #fff;
+      padding: 10px 40px;
+      border-radius: 35px;
+      font-size: 40px;
+      margin: 0 15px;
+      color: #00EA94;
+      border: 3px solid #00EA94;
+      text-shadow: 0 0 25px #00EA94;
+      transition: all 0.5s;
+      cursor: pointer;
+      outline: none; }
+      .game_menu .btn-group button:hover, .results_info .btn-group button:hover, .game_mode .btn-group button:hover {
+        box-shadow: 0 0 25px #00EA94; }
+
+.game_mode .btn-group {
+  width: 330px; }
+  .game_mode .btn-group button {
+    margin: 20px auto;
+    display: block; }
+
+.game_menu, .results_info {
+  display: none; }
+
+.cell {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border: 3px solid #00D9ED;
+  display: inline-block;
+  margin-left: -1px;
+  margin-top: -5px;
+  box-shadow: 0 0 15px 1px #00D9ED; }
+
+.letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 90px;
+  color: #00D9ED;
+  text-shadow: 0 0 25px #00D9ED; }
+
+svg {
+  position: absolute;
+  top: 0;
+  z-index: -1; }
+
+circle {
+  stroke: #00D9ED; }
+
+.outer-circle {
+  stroke-dasharray: 12.1947,12.1947,12.1947,12.1947,12.1947,12.1947; }
+
+.inner-circle {
+  stroke-width: 2;
+  stroke-dasharray: 2,2,2.1947,12.1947,12.1947,12.1947; }
+
+.center-circle {
+  stroke-width: 4;
+  stroke-dasharray: 5,1,1,2,2,1,12; }
