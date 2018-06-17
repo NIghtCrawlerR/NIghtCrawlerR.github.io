@@ -1,0 +1,81 @@
+.Movie{
+    width: 320px;
+    height: 500px;
+    border: 5px solid #333;
+    margin-right: 25px;
+    margin-bottom: 30px;
+    padding: 40px;
+}
+.Movie--liked{
+    border-color: rgb(53, 184, 53);
+}
+.Movie--disliked{
+    border-color: rgb(214, 26, 73);
+}
+.Movie:nth-child(3n){
+    margin-right: 0;
+}
+.Movie__title{
+    height: 60px;
+}
+.Movie__year{
+    text-align: right;
+    font-size: 12px;
+    color: #a8a8a8;
+}
+.Movie__description{
+    line-height: 24px;
+    font-size: 14px;
+    height: 320px;
+}
+.Movie__genre{
+    color: #fff;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 4px;
+    margin-right: 5px;
+    background-color: rgb(214, 26, 73);
+}
+.Movie__delete{
+    float: right;
+    background-color: rgb(214, 26, 73);
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+.Movie__genre__adventure{
+    background-color: rgb(214, 26, 73);
+}
+.Movie__genre__action{
+    background-color: orange;
+}
+.Movie__genre__comedy{
+    background-color: rgb(53, 184, 53);
+}
+.Movie__genre__crime{
+    background-color: rebeccapurple;
+}
+.Movie__genre__drama{
+    background-color: #333;
+}
+.Movie__genre__thriller{
+    background-color: rgb(52, 52, 255);
+}
+.Movie__genre__fantasy{
+    background-color: rgb(94, 22, 177);
+}
+.Movie__genre__animation{
+    background-color: rgb(233, 210, 0);
+}
+.Movie__genre__mystery{
+    background-color: rgb(52, 152, 245);
+}
+
+.Movie__rating_button{
+    width: 25px;
+    margin-right: 7px;
+}

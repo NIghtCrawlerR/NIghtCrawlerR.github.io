@@ -1,0 +1,25 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+.MainWrap{
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.Header{
+    margin: 50px 0;
+}
+.Header h1{
+    display: inline-block;
+    font-size: 42px;
+}
+.Header img{
+    width: 150px;
+    float: right;
+}
