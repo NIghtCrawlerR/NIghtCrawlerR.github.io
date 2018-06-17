@@ -1,0 +1,55 @@
+body{
+    background-color: #004775;
+  }
+  a{
+    color: #fff;
+    text-decoration: none;
+  }
+  form{
+    width: 600px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+  }
+  #input{
+    width: 500px;
+    height: 40px;
+    border-radius: 20px;
+    outline: none;
+  }
+  #btn{
+    height: 45px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    background-image: url(http://www.mehiko.ru/images/search-icon.png);
+    background-size: 100%;
+    cursor: pointer;
+  }
+  
+  #output{
+    width: 600px;
+    margin: 0 auto;
+  }
+  h1, h2{
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: -70px;
+    font-size: 30px;
+  }
+  h2{
+    cursor: pointer;
+  }
+  h3{
+    font-weight: bold;
+    padding-bottom: 20px;
+    color: #fff;
+  }
+  p{
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+  
