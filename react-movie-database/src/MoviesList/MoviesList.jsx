@@ -4,50 +4,73 @@ import movies from '../movies';
 import AddMovieForm from '../AddMovieForm/AddMovieForm';
 import './MoviesList.css';
 
+
 class MoviesList extends React.Component {
+
     constructor() {
         super();
+        
         this.state = {
             displayedMovies: movies,
+            moviesList: [],
             isFormOpen: false
         }
     }
+
     onAddMovie = (el) => {
-        console.log(this.state.displayedMovies)
+        movies.unshift(el)
+        console.log(movies)
         this.setState({
-            displayedMovies: [el, ...this.state.displayedMovies]
+            displayedMovies: movies //[el, ...this.state.displayedMovies]
+            // moviesList: [el, ...this.state.displayedMovies]
         })
+
+        console.log(this.state.moviesList)
     }
 
     onDeleteMovie = (id) => {
-        console.log(id)
+        for (var i = movies.length - 1; i >= 0; --i) {
+            if (movies[i].id === id) {
+                movies.splice(i, 1);
+            }
+        }
         this.setState({
-            displayedMovies: this.state.displayedMovies.filter(movie => movie.id !== id)
+            //displayedMovies: this.state.displayedMovies.filter(movie => movie.id !== id)
+            //  moviesList: this.state.displayedMovies
+            displayedMovies: movies
         })
     }
-    
+
     handleSearchByName = (event) => {
+        let filteredList = this.state.displayedMovies;
+
         let searchName = event.target.value.toLowerCase();
-        let displayedMovies = movies.filter(el => {
+        filteredList = movies.filter(el => {
             let searchValue = el.title.toLowerCase();
             return searchValue.indexOf(searchName) !== -1;
         })
         this.setState({
-            displayedMovies: displayedMovies
+            displayedMovies: filteredList
         })
+
     }
     handleSearchByGenre = (event) => {
+        let filteredList = this.state.displayedMovies;
+
         let searchGenre = event.target.value.toLowerCase();
-        let displayedMovies = movies.filter(el => {
+        filteredList = movies.filter(el => {
             let searchValue = el.genre.toLocaleString().toLowerCase();
             return searchValue.indexOf(searchGenre) !== -1;
         })
         this.setState({
-            displayedMovies: displayedMovies
+            displayedMovies: filteredList
         })
     }
 
-  
+
+    componentWillMount() {
+        this.setState({ moviesList: this.state.displayedMovies })
+    }
 
     toggleForm = () => {
         this.setState({
@@ -56,7 +79,7 @@ class MoviesList extends React.Component {
     }
 
     render() {
-        const movie = this.state.displayedMovies.map(movie => <Movie {...movie} key={movie.id} onDeleteClick={this.onDeleteMovie}/>);
+        const movie = this.state.displayedMovies.map(movie => <Movie {...movie} key={movie.id} onDeleteClick={this.onDeleteMovie} />);
         return (
             <div>
                 <input type="text" className="searchInput" placeholder="Search by title..." onChange={this.handleSearchByName} />

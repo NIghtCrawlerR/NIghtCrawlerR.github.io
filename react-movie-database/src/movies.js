@@ -1,6 +1,6 @@
 import v4 from 'uuid/v4';
 
-const movies = [{
+let movies = [{
     id: v4(),
     title: 'Jurassic World: Fallen Kingdom',
     year: '2016',
