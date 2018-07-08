@@ -30,13 +30,6 @@ const keyDownHandler = (e) => {
 
 }
 
-const responsiveImages = () => {
-    image.forEach((img)=>{
-       // img.width = '50px'
-        console.log(img.clientWidth)
-    })
-}
-
 
 input.addEventListener('keyup', keyDownHandler, false);
 
