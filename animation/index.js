@@ -14,7 +14,6 @@ const keyDownHandler = (e) => {
                 item.children[2].classList.add('fadeInMid')
                 item.children[3].classList.add('fadeInLast')
             }, 300)
-            responsiveImages();
         }
         else {
             item.classList.add('fadeOut')
