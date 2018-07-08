@@ -7,7 +7,10 @@ body{
     font-family: 'Open Sans', sans-serif;
     margin: 0;
 }
-
+.wrap{
+    height: 100vh;
+    overflow: hidden;
+}
 .search{
     display: flex;
     justify-content: flex-end;
@@ -15,7 +18,7 @@ body{
     margin-right: 50px;
 }
 .search__field{
-    width: 200px;
+    width: 160px;
     height: 40px;
     background-color: transparent;
     border-width: 0 0 1px 0;
@@ -42,7 +45,7 @@ body{
     position: absolute;
     transition: all 0.5s;
     width: 500px;
-    height: 520px;
+    height: 500px;
 }
 
 .image{
@@ -70,17 +73,17 @@ body{
 
 .fadeInLast{
     transition: all 0.5s;
-    animation: forwards animate 1.5s 1;
+    animation: forwards animate 1s 1;
     animation-timing-function: ease-in-out;
 }
 .fadeInFirst{
     transition: all 0.5s;
-    animation: forwards animate 1s 1 0.2s;
+    animation: forwards animate 0.7s 1 0.4s;
     animation-timing-function: ease-in-out;
 }
 .fadeInMid{
     transition: all 0.5s;
-    animation: forwards animateMid 1s 1 0.4s;
+    animation: forwards animateMid 0.7s 1 0.2s;
     animation-timing-function: ease-in-out;
 }
 
@@ -98,22 +101,22 @@ body{
 
 @keyframes animate {
     0% {
-        transform: translate(0, 20%);
+        transform: translate(0, 20%) scale(0);
         opacity: 0;
     }
     100% {
-        transform: translate(0,-50%);
+        transform: translate(0,-50%) scale(1);
         opacity: 1;
     }
 } 
 
 @keyframes animateMid {
     0% {
-        transform: translate(0, 80%);
+        transform: translate(0, 80%) scale(0);
         opacity: 0;
     }
     100% {
-        transform: translate(0,0);
+        transform: translate(0,0) scale(1);
         opacity: 1;
     }
 } 
@@ -129,10 +132,43 @@ body{
         margin-right: 0;
         justify-content: center;
     }
+   
+    .image--top-mid{
+        left: 65px;
+    }
+    .image--bottom-mid{
+        left: 130px;
+        top: 240px;
+    }
+    .image--last{
+        top: 170px;
+    }
     .images__container{
         margin-top: 30px;
     }
     .images__group{
         width: 100%;
     }
+
+    @keyframes animate {
+        0% {
+            transform: translate(0, 20%);
+            opacity: 0;
+        }
+        100% {
+            transform: translate(0,-50%) scale(0.6);
+            opacity: 1;
+        }
+    } 
+    
+    @keyframes animateMid {
+        0% {
+            transform: translate(0, 80%);
+            opacity: 0;
+        }
+        100% {
+            transform: translate(0,0) scale(0.6);
+            opacity: 1;
+        }
+    } 
 }
