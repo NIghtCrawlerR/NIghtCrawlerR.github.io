@@ -157,8 +157,9 @@ body{
         overflow: hidden;
     }
     .search{
+        display: block;
         width: 200px;
-    margin: 20px auto 0 auto;
+        margin: 20px auto 0 auto;
     }
     .complete{
         right: 0;
