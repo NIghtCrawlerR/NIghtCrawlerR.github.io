@@ -175,7 +175,7 @@ body{
         top: 170px;
     }
     .images__container{
-        margin-top: 30px;
+        margin-top: 0;
     }
     .images__group{
         width: 320px;
