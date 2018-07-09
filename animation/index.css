@@ -111,11 +111,11 @@ body{
 @-webkit-keyframes animate {
     0% {
         -webkit-transform: translate(0, 20%) scale(0);
-        opacity: 0;
+        -webkit-opacity: 0;
     }
     100% {
         -webkit-transform: translate(0,-50%) scale(1);
-        opacity: 1;
+        -webkit-opacity: 1;
     }
 }
 @keyframes animate {
@@ -131,11 +131,11 @@ body{
 @-webkit-keyframes animateMid {
     0% {
         -webkit-transform: translate(0, 80%) scale(0);
-        opacity: 0;
+        -webkit-opacity: 0;
     }
     100% {
         -webkit-transform: translate(0,0) scale(1);
-        opacity: 1;
+        -webkit-opacity: 1;
     }
 } 
 
@@ -182,11 +182,11 @@ body{
     @-webkit-keyframes animate {
         0% {
             -webkit-transform: translate(0, 20%);
-            opacity: 0;
+            -webkit-opacity: 0;
         }
         100% {
             -webkit-transform: translate(0,-50%) scale(0.6);
-            opacity: 1;
+            -webkit-opacity: 1;
         }
     } 
     @keyframes animate {
