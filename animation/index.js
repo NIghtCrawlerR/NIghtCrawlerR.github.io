@@ -2,14 +2,12 @@ let input = document.querySelector('.search__field');
 let imagesGroup = document.querySelectorAll('.images__group');
 let image = document.querySelectorAll('.image');
 
-alert('hello')
 
 const groups = ['good mood', 'good vibes'];
 let autocompleteAvailable = false,
     completeVal = '';
 
 const fadeIn = (item) => {
-    document.querySelector('.test').innerHTML = 'test'
     item.classList.remove('fadeOut')
     setTimeout(() => {
         item.children[0].classList.add('fadeInFirst')
