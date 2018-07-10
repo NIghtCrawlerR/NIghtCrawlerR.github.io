@@ -7,6 +7,7 @@ let autocompleteAvailable = false,
     completeVal = '';
 
 const fadeIn = (item) => {
+    document.querySelector('.test').innerHTML = 'test'
     item.classList.remove('fadeOut')
     setTimeout(() => {
         item.children[0].classList.add('fadeInFirst')
