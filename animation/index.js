@@ -2,6 +2,8 @@ let input = document.querySelector('.search__field');
 let imagesGroup = document.querySelectorAll('.images__group');
 let image = document.querySelectorAll('.image');
 
+alert('hello')
+
 const groups = ['good mood', 'good vibes'];
 let autocompleteAvailable = false,
     completeVal = '';
