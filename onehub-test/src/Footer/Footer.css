@@ -1,0 +1,86 @@
+.Footer{
+    background-color: #343a48;
+}
+.Footer__wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1180px;
+    margin: 0 auto;
+    padding: 37px 0;
+}
+.Footer h4{
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 21px;
+}
+
+.Footer__address img{
+    margin-bottom: 11px;
+}
+.Footer p{
+    color: #949db3;
+    line-height: 26px;
+    margin: 0;
+}
+.Footer__social{
+    margin-top: 29px;
+}
+.Footer__social a{
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    background-color: #434956;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+.Footer__social i{
+    color: #878a90;
+    padding: 12px 0;
+    transition: all 0.3s;
+}
+.Footer__social a:hover i{
+    color: #fff;
+}
+.Footer__menu ul{
+    padding: 0;
+    list-style: none;
+}
+
+.Footer__menu li{
+    line-height: 29px;
+}
+.Footer__menu a{
+    color: #919ab1;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.Footer__menu a:hover{
+    color: #07d79b;
+}
+.Footer__menu--right{
+    padding-right: 20px;
+}
+.Footer__contacts{
+    padding-right: 40px;
+}
+.Footer__contacts__text{
+    margin-bottom: 10px !important;
+}
+.Footer .Footer__contacts__phone, .Footer .Footer__contacts__email{
+    color: #fff;
+}
+.Footer__copyright{
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid #444956;
+    padding-top: 20px;
+    padding-bottom: 3px;
+}
+.Footer__copyright p{
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 16px;
+}

@@ -1,0 +1,22 @@
+.Navigation ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    padding-top: 13px;
+}
+.Navigation li{
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #42495b;
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-right: 58px;
+    margin-bottom: 20px;
+}
+.Navigation li:hover{
+    color: #07d79b;
+}
+.Navigation .Navigation--active{
+    color: #07d79b;
+}

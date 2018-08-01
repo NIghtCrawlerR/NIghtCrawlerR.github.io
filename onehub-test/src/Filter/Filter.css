@@ -1,0 +1,199 @@
+.inputGroup{
+    position: relative;
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
+.inputGroup:nth-child(4n+4){
+    margin-right: 0;
+}
+.Filter__wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ActiveFilters{
+    margin-top: 50px; 
+}
+
+.ActiveFilters__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ActiveFilters__result{
+    color: #909090;
+    font-size: 15px;
+}
+.ActiveFilters__result span{
+    color: #42495b; 
+}
+
+.ActiveFilters h4{
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #42495b;
+    margin-bottom: 30px;
+}
+
+.ActiveFilters button{
+    width: 95px;
+    height: 34px;
+    border: 1px solid #09c199;
+    border-radius: 30px;
+    background-color: transparent;
+    outline: none;
+    color: #09c199;
+    cursor: pointer;
+    margin-right: 30px;
+    margin-bottom: 40px;
+    transition: all 0.3s;
+}
+.ActiveFilters button:hover{
+    box-shadow: 0 0 5px 1px #09c199;
+}
+
+.ActiveFilters__list{
+    display: inline-block;
+}
+.ActiveFilters__list__item{
+    color: #8c8c8c;
+    text-transform: capitalize;
+    display: inline-block;
+    margin-right: 70px;
+    margin-bottom: 40px;
+}
+.remove-param{
+    width: 16px;
+    height: 16px;
+    border: 1px solid #8c8c8c;
+    border-radius: 50%;
+    color: #8c8c8c;
+    cursor: pointer;
+    font-size: 11px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 9px;
+}
+
+.Filter__select{
+    width: 233px;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    color: #868686;
+    text-transform: capitalize;
+    padding: 7px 20px;
+    cursor: pointer;
+}
+.Filter__select::after{
+    position: absolute;
+    right: 15px;
+    content: '';
+    width: 11px;
+    height: 11px;
+    border-left: 1px solid #868686;
+    border-bottom: 1px solid #868686; 
+    transform: rotate(-45deg);
+}
+
+.Filter__dropdown{
+    position: absolute;
+    top: 55px;
+    display: none;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 20px 5px #f1f1f1;
+    z-index: 20;
+    padding: 25px 20px;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+.Filter__dropdown::before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-left: 1px solid #ebebeb;
+    border-top: 1px solid #ebebeb;
+    transform: rotate(45deg);
+}
+
+.Filter__dropdown h4{
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 11px 0 30px 0;
+    color: #42495b;
+}
+
+.Filter__dropdown div{
+    margin-bottom: 17px;
+}
+
+.Filter__dropdown--active{
+    display: block;
+}
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 30px;
+  padding-top: 2px;
+  cursor: pointer;
+  color: #42495b;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 18px; height: 18px;
+  border: 2px solid #cacaca;
+  background: #fff;
+  border-radius: 3px;
+  /* box-shadow: inset 0 1px 3px rgba(0,0,0,.1); */
+}
+[type="checkbox"]:checked + label:before {
+    background: #07d79b;
+    border: 2px solid transparent;
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 3px; left: 4px;
+  font-size: 1.4em;
+  line-height: 0.8;
+  color: #fff;
+  transition: all .2s;
+  font-family: Helvetica, Arial, sans-serif;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 2px solid #4778d9!important;
+}
+
+

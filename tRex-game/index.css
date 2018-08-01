@@ -6,6 +6,12 @@
     background: #f1f1f1;
     border-bottom: 3px solid rgb(43, 23, 0);
 }
+.score{
+    position: absolute;
+    color: #333;
+    top: 20px;
+    right: 20px;
+}
 .barrier{
     width: 52px;
     height: 93px;

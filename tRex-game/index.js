@@ -1,8 +1,17 @@
 let game = document.querySelector('.game');
 let player = document.querySelector('.player');
-
+let gameScore = document.querySelector('.score');
 
 //tRex object
+const gameController = {
+    score: 0,
+    updateScore: function(){
+        this.score++
+    },
+    render: function(){
+        gameScore.innerHTML = this.score;
+    }
+}
 const tRex = {
     IMAGE: 'img/trex.png',
     SIZE: 88,
@@ -39,6 +48,8 @@ const tRex = {
 
 const updateAnimation = () => {
     tRex.run();
+    gameController.updateScore();
+    gameController.render();
     player.style.backgroundPositionX = tRex.sourceX + 'px'
 }
 
@@ -51,7 +62,7 @@ const updateAnimation = () => {
 
 const keyPressHandler = (e) => {
     let code = e.keyCode;
-    if (code == 87) {
+    if (code == 32) {
         tRex.jump();
     }
 }

@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.Main_wrap{
+  width: 1180px;
+  margin: 0 auto;
+}
+.supwrap{
+  width: 1180px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1179px){
+  body{
+    padding: 0 20px;
+  }
+  .Main_wrap, .supwrap{
+    width: 100%;
+  }
+  .Header__wrap{
+    width: 100%;
+    
+  }
+  .inputGroup:nth-child(4n+4){
+    margin-right: 25px;
+  }
+}
+
+@media screen and (max-width: 1168px){
+  .Header{
+    height: auto;
+    padding: 20px 0;
+  }
+  .Header div{
+    margin: 10px;
+  }
+  .Navigation ul, .Filter__wrap{
+    justify-content: center;
+  }
+}
