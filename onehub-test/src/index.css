@@ -14,10 +14,10 @@ body {
 }
 
 @media screen and (max-width: 1179px){
-  body{
+  .Main_wrap{
     padding: 0 20px;
   }
-  .Main_wrap, .supwrap{
+  .Main_wrap, .supwrap, .Footer__wrap{
     width: 100%;
   }
   .Header__wrap{
@@ -40,4 +40,11 @@ body {
   .Navigation ul, .Filter__wrap{
     justify-content: center;
   }
+
+  @media screen and (max-width: 555px){
+    .Courses{
+      justify-content: center;
+    }
+  }
+
 }
