@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
-    <title>Document</title>
+    <title>Angelina Ratnykova - Junior Front-End Developer</title>
 </head>
 
 <body>
@@ -56,7 +56,37 @@
         <h3 class="Portfolio__title__shadow sidepage__title__shadow">Projects</h3>
         <h3 class="Portfolio__title sidepage__title">Projects</h3>
         <div class="divider"></div>
+        <div class="Project__viewport">
+            <div class="Project__image"></div>
+            <div class="Project__descr">
+                <h3 class="Project__title">Protey Fx</h3>
+                <p class="Project__descr__text">Duis fugiat non nulla sit eiusmod consectetur consectetur non incididunt et aliqua exercitation excepteur.
+                    Irure sit aliqua est deserunt.</p>
+                <a href="https://proteyfx.com/" target="_blank" class="link_to_project">View case</a>
+            </div>
+        </div>
         <div class="Portfolio__project-list">
+            <div class="case_preview">
+                <img src="img/proteyfx.jpg" alt="">
+            </div>
+            <div class="case_preview">
+                <img src="img/juka.jpg" alt="">
+            </div>
+            <div class="case_preview">
+                <img src="img/albatros.jpg" alt="">
+            </div>
+            <div class="case_preview">
+                <img src="img/otp-calc.jpg" alt="">
+            </div>
+            <div class="case_preview">
+                <img src="img/segodnya-calc.jpg" alt="">
+            </div>
+            <div class="case_preview">
+                <img src="img/tick-tack-toe.jpg" alt="">
+            </div>
+            <div class="case_preview">
+                <img src="img/last-treasure.jpg" alt="">
+            </div>
         </div>
     </div>
 
@@ -70,10 +100,71 @@
         <h3 class="Contacts__title__shadow sidepage__title__shadow">Contacts</h3>
         <h3 class="Contacts__title sidepage__title">Contacts</h3>
         <div class="divider"></div>
+
+        <div class="Contacts__text">
+            <p>Kiev, Ukraine</p>
+            <p>+38(097)360-65-72</p>
+            <p>angelina.ratnykova@gmail.com</p>
+        </div>
+
+        <div class="Homepage__social">
+            <a href="https://www.facebook.com/angelina.ratnicova" target="_blank" class="Homepage__social__link Homepage__social__fb">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/angelina-ratnykova-338154135/" target="_blank" class="Homepage__social__link Homepage__social__in">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/NIghtCrawlerR" target="_blank" class="Homepage__social__link Homepage__social__gh">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
     </div>
 
     <script>
+        var projects = [{
+            title: 'Protey FX',
+            descr: 'Duis fugiat non nulla sit eiusmod consectetur consectetur non incididunt et aliqua exercitation excepteur. Irure sit aliqua est deserunt.',
+            img: 'img/proteyfx.jpg',
+            link: 'https://proteyfx.com/'
+        },
+        {
+            title: 'Jukamarket',
+            descr: 'Duis fugiat non nulla sit eiusmod consectetur consectetur non incididunt et aliqua exercitation excepteur. Irure sit aliqua est deserunt.',
+            img: 'img/juka.jpg',
+            link: 'https://jukamarket.com/'
+        },
+        {
+            title: 'Albatros',
+            descr: 'Duis fugiat non nulla sit eiusmod consectetur consectetur non incididunt et aliqua exercitation excepteur. Irure sit aliqua est deserunt.',
+            img: 'img/albatros.jpg',
+            link: 'http://albatros.ua/'
+        },
+        {
+            title: 'OTP calc',
+            descr: 'Duis fugiat non nulla sit eiusmod consectetur consectetur non incididunt et aliqua exercitation excepteur. Irure sit aliqua est deserunt.',
+            img: 'img/otp-calc.jpg',
+            link: 'http://otppension.com.ua/state-pension-calculator'
+        },
+        {
+            title: 'Heat calc',
+            descr: 'Duis fugiat non nulla sit eiusmod consectetur consectetur non incididunt et aliqua exercitation excepteur. Irure sit aliqua est deserunt.',
+            img: 'img/segodnya-calc.jpg',
+            link: 'https://www.segodnya.ua/kalkulyatorotoplenie.html'
+        },
+        {
+            title: 'Sci-Fi Tick Tack Toe',
+            descr: 'Duis fugiat non nulla sit eiusmod consectetur consectetur non incididunt et aliqua exercitation excepteur. Irure sit aliqua est deserunt.',
+            img: 'img/tick-tack-toe.jpg',
+            link: 'https://nightcrawlerr.github.io/tick-tack-toe/'
+        },
+        {
+            title: 'Game Last Treasure',
+            descr: 'Duis fugiat non nulla sit eiusmod consectetur consectetur non incididunt et aliqua exercitation excepteur. Irure sit aliqua est deserunt.',
+            img: 'img/last-treasure.jpg',
+            link: 'https://nightcrawlerr.github.io/game-last-treasure/'
+        }]
 
+        //parallax
         var strength1 = 50;
         var strength2 = 100;
         var strength3 = 200;
@@ -85,13 +176,15 @@
             $('#background').css("background-position", (strength1 / $(window).width() * pageX * -1) + "px " + (strength1 / $(window).height() * pageY * -1) + "px");
 
         });
+        //end parallax
 
+        //menu
         $('.Menu__button').click(function () {
             $('.Side-menu').toggleClass('Side-menu--active');
             $(this).toggleClass('Menu__button--active');
         })
 
-        //menu
+
         $('.Side-menu li').click(function () {
             console.log($(this).index())
             var index = $(this).index();
@@ -103,12 +196,36 @@
             }, 200)
 
         })
+        //end menu
 
-        $(document).click(function () {
-            if ($(window.event.target).attr('class') != 'sidepage')
+        // $(document).click(function () {
+        //     if ($(window.event.target).attr('class') != 'sidepage')
+        //         $(".sidepage").css('left', '-50%');
+        // });
+
+        $(document).mouseup(function (e) {
+            var container = $(".sidepage, .case_preview");
+
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
                 $(".sidepage").css('left', '-50%');
-              
+            }
         });
+
+        //view project
+        $('.case_preview').click(function () {
+            var index = $(this).index();
+            $('.case_preview').removeClass('case_preview--active');
+            $(this).addClass('case_preview--active');
+            selectProject(index)
+        })
+
+        function selectProject(index) {
+            $('.Project__title').text(projects[index].title)
+            $('.Project__descr__text').text(projects[index].descr)
+            $('.Project__image').css('background-image', 'url(' + projects[index].img + ')')
+            $('.link_to_project').attr('href', projects[index].link)
+        }
 
     </script>
 </body>
