@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/media.css">
     <title>Angelina Ratnykova - Junior Front-End Developer</title>
 </head>
 
@@ -32,6 +33,11 @@
                 <span></span>
                 <span></span>
             </div>
+        </div>
+        <div class="Menu__button__mob">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
 
         <div class="Side-menu">
@@ -210,8 +216,18 @@
             $('.sidepage').css('left', '-50%');
             setTimeout(function () {
                 $('.sidepage-' + index).css('left', '0');
+                $('.sidepage-' + index).addClass('sidepage--active');
+                if($(window).width() < 768){
+                    $('.sidepage-' + index).show();
+                    $('.Menu__button__mob').show()
+                }
             }, 200)
 
+        })
+
+        $('.Menu__button__mob').click(function(){
+            $('.sidepage').hide();
+            $('.Menu__button__mob').hide();
         })
         //end menu
 
@@ -259,6 +275,8 @@
             "pieBrightnessStep": 15,
             "outlineColor": "#670c1d",
             "outlineThickness": 1,
+            "radius": "30%",
+            "innerRadius": "50%",
             "defs": {
                 "filter": [{
                     "id": "shadow",
@@ -319,7 +337,7 @@
                 "level": 85,
                 "color": "#333"
             }],
-           // "colorField": "color",
+            // "colorField": "color",
             "valueField": "level",
             "titleField": "skill"
         });

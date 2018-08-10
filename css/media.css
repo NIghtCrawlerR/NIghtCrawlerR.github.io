@@ -1,0 +1,103 @@
+@media screen and (max-width: 767px){
+    body{
+        overflow: auto;
+    }
+    .screen-1{
+        overflow: hidden;
+    }
+    #background{
+        top: 0;
+        left: 0;
+    }
+    .Menu__btn-group{
+        top: 15px;
+    }
+    .Menu__btn-group p{
+        display: none;
+    }
+    .Menu__button__mob{
+        
+        position: absolute;
+        top: 15px;
+        right: 50px;
+        z-index: 150;
+    }
+    .Menu__button__mob span {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        display: block;
+        margin: 3px 0;
+    }
+    .Homepage__name{
+        font-size: 18px;
+    }
+    .Homepage__profession{
+        font-size: 24px;
+    }
+    .Homepage__social{
+        display: none;
+    }
+
+    .sidepage{
+        display: none;
+        width: 100%;
+        left: -108%;
+    }
+    .sidepage--active{
+        display: block;
+        z-index: 100;
+    }
+    .sidepage__title__shadow{
+        top: -10px;
+        font-size: 32px;
+    }
+    .sidepage__title{
+        font-size: 18px;
+        margin-top: 55px;
+    }
+    .Project__viewport {
+        flex-wrap: wrap;
+        margin-top: 40px;
+        padding: 0 20px;
+    }
+    .Project__image, .Project__descr{
+        width: 100%;
+    }
+    .Project__image{
+        height: 135px;
+        margin-right: 0;
+    }
+    .Project__title{
+        font-size: 18px;
+    }
+    .Project__viewport p{
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .Portfolio__project-list{
+        position: relative;
+        max-height: 180px;
+        margin-top: 33px;
+        padding-right: 17px;
+    }
+    .case_preview{
+        margin-left: 17px;
+    }
+    .Portfolio__project-list img{
+        width: 128px;
+    }
+
+    .About__text {
+        line-height: 20px;
+        font-size: 12px;
+        padding: 0 20px;
+    }
+    .Contacts__text {
+        margin: 100px 0 0 38px;
+        font-size: 13px;
+    }
+    .Contacts .Homepage__social{
+        display: flex;
+    }
+}
