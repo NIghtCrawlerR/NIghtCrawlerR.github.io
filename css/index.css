@@ -1,0 +1,236 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #333; 
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    color: #fff;
+}
+
+.screen-1{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100vh;
+}
+#background{
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    top: -100px;
+    left: -100px;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.Homepage__textwrap{
+    text-align: center;
+}
+
+.Homepage__name{
+    font-size: 26px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.Homepage__profession{
+    font-size: 42px;
+    text-transform: uppercase;
+}
+
+.divider{
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 2px;
+    background-color: #fff;
+    margin: 60px auto 0 auto;
+}
+.divider::before, .divider::after{
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.divider::after{
+    top: -5px;
+}
+
+.Homepage__social{
+    display: flex;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+
+.Homepage__social a{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    margin-right: 25px;
+}
+
+.Homepage__social i{
+    margin-top: 16px;
+}
+
+.Homepage__social a::before{
+    content: '';
+    position: absolute;
+    border-left: 3px solid #fff;
+    border-top: 3px solid #fff;
+    border-radius: 50%;
+    top: -2px;
+    left: -1px;
+    width: 50px;
+    height: 50px;
+    transform: rotate(-45deg);
+    transition: all 0.3s;
+}
+
+.Homepage__social a:hover::before{
+    transform: rotate(135deg);
+}
+
+.Menu__btn-group{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    z-index: 20;
+}
+.Menu__btn-group p{
+    display: inline-block;
+}
+.Menu__button{
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.Menu__button span{
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+    margin: 3px 0;
+    transition: all 0.1s;
+    transform-origin: 21% 50%;
+}
+
+.Menu__button--active span:first-of-type{
+    transform: rotate(45deg)
+}
+.Menu__button--active span:nth-child(3n+2){
+    opacity: 0;
+}
+.Menu__button--active span:last-of-type{
+    transform: rotate(-45deg)
+}
+
+.Menu__button:hover span{
+    margin: 5px 0;
+}
+.Menu__button--active:hover span{
+    margin: 3px 0;
+}
+
+.Side-menu{
+    position: absolute;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgb(26, 26, 26);
+    box-shadow: 0 0 36px 5px #151515;
+    z-index: 10;
+    transition: all 0.5s;
+}
+
+.Side-menu--active{
+    right: 0;
+}
+
+.Side-menu ul{
+    color: #fff;
+    list-style: none;
+    margin-top: 150px;
+}
+
+.Side-menu li{
+    position: relative;
+    line-height: 46px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.Side-menu li::before{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 5px;
+    bottom: 10px;
+    background-color: rgb(255, 38, 74, 0.6);
+    transition: all 0.3s;
+}
+.Side-menu li:hover{
+    color: rgb(255, 38, 74);
+}
+.Side-menu li:hover::before{
+    width: 100%;
+}
+
+.menu-item--active{
+    color: rgb(255, 38, 74);
+}
+.menu-item--active::before{
+    width: 100% !important;
+}
+
+/* SIDEPAGE STYLES */
+.sidepage{
+    position: absolute;
+    left: -50%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(26, 26, 26);
+    box-shadow: 0 0 36px 5px #151515;
+    transition: all 0.5s;
+}
+
+.sidepage__title{
+    text-align: center;
+    font-size: 52px;
+    text-transform: uppercase;
+    margin-top: 80px;
+}
+
+.sidepage__title__shadow{
+    position: absolute;
+    top: -25px;
+    left: -10px;
+    color: #333;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 90px;
+}

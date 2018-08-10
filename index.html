@@ -1,1 +1,116 @@
-<h1>Hello world!</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="screen-1">
+        <div id="background"></div>
+        <div class="Menu__btn-group">
+            <p>Menu</p>
+            <div class="Menu__button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="Side-menu">
+            <ul>
+                <li>Projects</li>
+                <li>About</li>
+                <li>Contacts</li>
+            </ul>
+        </div>
+
+        <div class="Homepage__textwrap">
+            <h4 class="Homepage__name">Angelina Ratnykova</h4>
+            <h2 class="Homepage__profession">Junior Front-End Developer</h2>
+            <span class="divider"></span>
+        </div>
+        <div class="Homepage__social">
+            <a href="https://www.facebook.com/angelina.ratnicova" target="_blank" class="Homepage__social__link Homepage__social__fb">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/angelina-ratnykova-338154135/" target="_blank" class="Homepage__social__link Homepage__social__in">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/NIghtCrawlerR" target="_blank" class="Homepage__social__link Homepage__social__gh">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="sidepage sidepage-0 Portfolio">
+        <h3 class="Portfolio__title__shadow sidepage__title__shadow">Projects</h3>
+        <h3 class="Portfolio__title sidepage__title">Projects</h3>
+        <div class="divider"></div>
+        <div class="Portfolio__project-list">
+        </div>
+    </div>
+
+    <div class="sidepage sidepage-1 About">
+        <h3 class="About__title__shadow sidepage__title__shadow">About</h3>
+        <h3 class="About__title sidepage__title">About</h3>
+        <div class="divider"></div>
+    </div>
+
+    <div class="sidepage sidepage-2 Contacts">
+        <h3 class="Contacts__title__shadow sidepage__title__shadow">Contacts</h3>
+        <h3 class="Contacts__title sidepage__title">Contacts</h3>
+        <div class="divider"></div>
+    </div>
+
+    <script>
+
+        var strength1 = 50;
+        var strength2 = 100;
+        var strength3 = 200;
+        $("html").mousemove(function (e) {
+            var pageX = e.pageX - ($(window).width() / 2);
+            var pageY = e.pageY - ($(window).height() / 2);
+            var newvalueX = 1 * pageX * -1;
+            var newvalueY = 1 * pageY * -1;
+            $('#background').css("background-position", (strength1 / $(window).width() * pageX * -1) + "px " + (strength1 / $(window).height() * pageY * -1) + "px");
+
+        });
+
+        $('.Menu__button').click(function () {
+            $('.Side-menu').toggleClass('Side-menu--active');
+            $(this).toggleClass('Menu__button--active');
+        })
+
+        //menu
+        $('.Side-menu li').click(function () {
+            console.log($(this).index())
+            var index = $(this).index();
+            $('.Side-menu li').removeClass('menu-item--active');
+            $(this).addClass('menu-item--active');
+            $('.sidepage').css('left', '-50%');
+            setTimeout(function () {
+                $('.sidepage-' + index).css('left', '0');
+            }, 200)
+
+        })
+
+        $(document).click(function () {
+            if ($(window.event.target).attr('class') != 'sidepage')
+                $(".sidepage").css('left', '-50%');
+              
+        });
+
+    </script>
+</body>
+
+</html>
