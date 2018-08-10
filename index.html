@@ -226,6 +226,7 @@
             // if the target of the click isn't the container nor a descendant of the container
             if (!container.is(e.target) && container.has(e.target).length === 0) {
                 $(".sidepage").css('left', '-50%');
+                $('.Side-menu li').removeClass('menu-item--active');
             }
         });
 
