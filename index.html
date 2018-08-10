@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Amcharts-->
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/animate/animate.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <!--End amcharts-->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet">
@@ -66,7 +74,7 @@
             </div>
         </div>
         <div class="Portfolio__project-list">
-            <div class="case_preview">
+            <div class="case_preview case_preview--active">
                 <img src="img/proteyfx.jpg" alt="">
             </div>
             <div class="case_preview">
@@ -94,6 +102,15 @@
         <h3 class="About__title__shadow sidepage__title__shadow">About</h3>
         <h3 class="About__title sidepage__title">About</h3>
         <div class="divider"></div>
+        <div class="About__text">
+            Culpa voluptate ut adipisicing nostrud. Ea pariatur pariatur laboris ad nisi reprehenderit ad excepteur fugiat eu irure eiusmod
+            ut tempor. Sit sint laboris nostrud amet laborum qui aliqua ipsum. Aliqua cupidatat anim officia ipsum. Sunt
+            labore esse consectetur ipsum Lorem enim proident nostrud adipisicing velit. Reprehenderit ipsum magna velit
+            incididunt do pariatur mollit magna. Ipsum exercitation est aliquip nisi aute mollit dolor proident ad aute.
+            Eiusmod laborum in sit in magna fugiat magna eu excepteur id. Ut cillum id amet irure mollit commodo ut aliquip.
+            Aliqua veniam laborum culpa magna aliqua reprehenderit et voluptate veniam labore excepteur consequat.
+        </div>
+        <div id="chartdiv"></div>
     </div>
 
     <div class="sidepage sidepage-2 Contacts">
@@ -225,6 +242,100 @@
             $('.Project__descr__text').text(projects[index].descr)
             $('.Project__image').css('background-image', 'url(' + projects[index].img + ')')
             $('.link_to_project').attr('href', projects[index].link)
+        }
+
+        //Amcharts
+        var chart = AmCharts.makeChart("chartdiv", {
+            "type": "pie",
+            "startDuration": 0,
+            "theme": "light",
+            "addClassNames": true,
+            "innerRadius": "30%",
+            "color": "#fff",
+            "fontSize": 14,
+            //"colors": ["#333, #fff, #f1f1f1, #f2f2f2, #f3f3f3, #f4f4f4, #f5f5f5, #f6f6f6, #f7f7f7"],
+            "pieBaseColor": "#670c1d",
+            "pieBrightnessStep": 15,
+            "outlineColor": "#670c1d",
+            "outlineThickness": 1,
+            "defs": {
+                "filter": [{
+                    "id": "shadow",
+                    "width": "200%",
+                    "height": "200%",
+                    "feOffset": {
+                        "result": "offOut",
+                        "in": "SourceAlpha",
+                        "dx": 0,
+                        "dy": 0
+                    },
+                    "feGaussianBlur": {
+                        "result": "blurOut",
+                        "in": "offOut",
+                        "stdDeviation": 5
+                    },
+                    "feBlend": {
+                        "in": "SourceGraphic",
+                        "in2": "blurOut",
+                        "mode": "normal"
+                    }
+                }]
+            },
+            "dataProvider": [{
+                "skill": "JavaScript",
+                "level": 95,
+                "color": "#520e1b"
+            }, {
+                "skill": "HTML",
+                "level": 130,
+                "color": "#5e0a1a"
+            }, {
+                "skill": "CSS",
+                "level": 130,
+                "color": "#c03435"
+            }, {
+                "skill": "Joomla",
+                "level": 90,
+                "color": "#300a19"
+            }, {
+                "skill": "ReactJS",
+                "level": 80,
+                "color": "#250917"
+            }, {
+                "skill": "Gulp",
+                "level": 50,
+                "color": "#ea2b3d"
+            }, {
+                "skill": "SCSS/LESS",
+                "level": 100,
+                "color": "#333"
+            }, {
+                "skill": "Photoshop",
+                "level": 75,
+                "color": "#333"
+            }, {
+                "skill": "Git",
+                "level": 85,
+                "color": "#333"
+            }],
+           // "colorField": "color",
+            "valueField": "level",
+            "titleField": "skill"
+        });
+
+        chart.addListener("init", handleInit);
+
+        chart.addListener("rollOverSlice", function (e) {
+            handleRollOver(e);
+        });
+
+        function handleInit() {
+            chart.legend.addListener("rollOverItem", handleRollOver);
+        }
+
+        function handleRollOver(e) {
+            var wedge = e.dataItem.wedge.node;
+            wedge.parentNode.appendChild(wedge);
         }
 
     </script>
