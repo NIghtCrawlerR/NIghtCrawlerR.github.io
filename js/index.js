@@ -65,7 +65,7 @@ $('.Menu__button').click(function () {
 })
 
 
-$('.Side-menu li').click(function () {
+$('.Side-menu li, .navigation_hidden li').click(function () {
     console.log($(this).index())
     var index = $(this).index();
     $('.Side-menu li').removeClass('menu-item--active');
@@ -88,18 +88,25 @@ $('.Menu__button__mob').click(function(){
 })
 //end menu
 
-// $(document).click(function () {
-//     if ($(window.event.target).attr('class') != 'sidepage')
-//         $(".sidepage").css('left', '-50%');
-// });
+//rocket animation
+$('.rocket-animated').click(function(){
+    $(this).removeClass('rocket-animated') 
+    $(this).addClass('rocket-animated--active') 
+    setTimeout(function() {
+        $('.navigation_hidden').fadeIn(500);
+    }, 2000)
+})
+
+//end animation
 
 $(document).mouseup(function (e) {
-    var container = $(".sidepage, .case_preview");
+    var container = $(".sidepage, .case_preview, .Side-menu");
 
     // if the target of the click isn't the container nor a descendant of the container
     if (!container.is(e.target) && container.has(e.target).length === 0) {
         $(".sidepage").css('left', '-50%');
         $('.Side-menu li').removeClass('menu-item--active');
+       // $('.Side-menu').hide();
     }
 });
 

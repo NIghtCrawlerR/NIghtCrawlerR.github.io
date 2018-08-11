@@ -47,6 +47,36 @@ h1, h2, h3, h4, h5, h6, p{
     text-transform: uppercase;
 }
 
+.navigation_hidden{
+    margin-top: -50px;
+    display: none;
+   
+}
+
+.navigation_hidden ul{
+    list-style: none;
+    padding-left: 0;
+}
+.navigation_hidden li{
+    display: inline-block;
+    color: #fff;
+    font-weight: 500px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.navigation_hidden li:hover{
+    color: rgb(255, 38, 74);
+}
+.navigation_hidden span{
+    width: 4px;
+    height: 4px;
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
 .divider{
     position: relative;
     display: block;
@@ -57,20 +87,48 @@ h1, h2, h3, h4, h5, h6, p{
     margin: 35px auto 0 auto;
     background-image: url(../img/rocket.png);
 }
-/* .divider::before, .divider::after{
-    position: absolute;
-    content: '';
-    width: 50px;
-    height: 2px;
-    background-color: #fff;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
+
+.rocket-animated:hover{
+    /* animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both; */
+    animation: shake 1s linear 0s 1 forwards;
+    cursor: pointer
+}
+.rocket-animated--active{
+    animation: rocket 2s cubic-bezier(.36,.07,.19,.97) 0s 1 forwards;
 }
 
-.divider::after{
-    top: -5px;
-} */
+@keyframes shake {
+    10%, 90% {
+      transform: rotate(10deg) translateY(2px);
+    }
+    
+    20%, 80% {
+      transform: rotate(-10deg) translateY(-2px);
+    }
+  
+    30%, 50%, 70% {
+      transform: rotate(10deg) translateY(2px);
+    }
+  
+    40%, 60% {
+      transform: rotate(-10deg) translateY(-2px);
+    }
+    100%{
+        transform: rotate(0) translateY(2px);
+    }
+  }
+
+  @keyframes rocket {
+    10% {
+      transform: rotate(10deg) translateX(-50px);
+    }
+    30% {
+        transform: rotate(10deg) translateX(-60px);
+      }
+    100%{
+        transform: rotate(-15deg) translateX(2000px);
+    }
+  }
 
 .Homepage__social{
     display: flex;
@@ -227,6 +285,12 @@ h1, h2, h3, h4, h5, h6, p{
     transition: all 0.5s;
 }
 
+.sidepage__icon{
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+}
+
 .sidepage__title{
     text-align: center;
     font-size: 52px;
@@ -289,7 +353,7 @@ h1, h2, h3, h4, h5, h6, p{
 
 .Project__viewport{
     display: flex;
-    margin-top: 90px;
+    margin-top: 45px;
     padding: 0 30px;
 }
 
