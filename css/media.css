@@ -70,10 +70,12 @@
     }
     .Project__title{
         font-size: 18px;
+        margin-top: 25px;
     }
     .Project__viewport p{
         font-size: 12px;
         line-height: 20px;
+        margin-bottom: 30px;
     }
     .Portfolio__project-list{
         position: relative;
@@ -99,5 +101,6 @@
     }
     .Contacts .Homepage__social{
         display: flex;
+        right: 33px;
     }
 }
