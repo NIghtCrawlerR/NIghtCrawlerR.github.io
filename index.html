@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--Amcharts-->
-    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+    <!-- <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
     <script src="https://www.amcharts.com/lib/3/pie.js"></script>
     <script src="https://www.amcharts.com/lib/3/plugins/animate/animate.min.js"></script>
     <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css"
         media="all" />
-    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script> -->
     <!--End amcharts-->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -102,37 +103,40 @@
         <div class="Projects_wrap">
             <h3>Web sites</h3>
             <div class="Portfolio__project-list">
-                <div class="case_preview case_preview--active" data-index="0" data-name="proteyfx">
+                <div class="case_preview case_preview--active" data-name="proteyfx">
                     <img src="img/proteyfx.jpg" alt="">
                 </div>
-                <div class="case_preview" data-index="2" data-name="flyglobus">
+                <div class="case_preview" data-name="flyglobus">
                     <img src="img/flyglobus.png" alt="">
                 </div>
-                <div class="case_preview" data-index="1" data-name="juka">
+                <div class="case_preview" data-name="juka">
                     <img src="img/juka.jpg" alt="">
                 </div>
-                <div class="case_preview" data-index="2" data-name="albatros">
+                <div class="case_preview" data-name="albatros">
                     <img src="img/albatros.jpg" alt="">
                 </div>
             </div>
             <h3>Web apps</h3>
             <div class="Portfolio__project-list">
-                <div class="case_preview" data-index="3" data-name="timer">
+                <div class="case_preview" data-name="moviedb">
+                    <img src="img/moviedb.jpg" alt="">
+                </div>
+                <div class="case_preview" data-name="timer">
                     <img src="img/timer.png" alt="">
                 </div>
-                <div class="case_preview" data-index="3" data-name="otp">
+                <div class="case_preview" data-name="otp">
                     <img src="img/otp-calc.jpg" alt="">
                 </div>
-                <div class="case_preview" data-index="4" data-name="segodnya">
+                <div class="case_preview" data-name="segodnya">
                     <img src="img/segodnya-calc.jpg" alt="">
                 </div>
             </div>
             <h3>Games</h3>
             <div class="Portfolio__project-list">
-                <div class="case_preview" data-index="5" data-name="tick-tack-toe">
+                <div class="case_preview" data-name="tick-tack-toe">
                     <img src="img/tick-tack-toe.jpg" alt="">
                 </div>
-                <div class="case_preview" data-index="6" data-name="last-treasure">
+                <div class="case_preview" data-name="last-treasure">
                     <img src="img/last-treasure.jpg" alt="">
                 </div>
             </div>
@@ -156,7 +160,13 @@
             <br> <br>
             Here is list of technologies I work with:
         </div>
-        <div id="chartdiv"></div>
+        <!-- <div id="chartdiv"></div> -->
+        <br>
+        <br>
+        <div class="chart-container" style="position: relative; height:40vh; width:100%;">
+            <canvas id="myChart" ></canvas>
+        </div>
+        
     </div>
 
     <div class="sidepage sidepage-2 Contacts">

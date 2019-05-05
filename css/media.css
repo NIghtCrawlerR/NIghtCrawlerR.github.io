@@ -108,4 +108,12 @@
     #chartdiv{
         height: 300px;
     }
+
+    .Projects_wrap {
+        margin-top: 40px;
+        max-height: none;
+    }
+    .Portfolio__project-list {
+        max-height: none;
+    }
 }
