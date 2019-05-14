@@ -58,6 +58,12 @@ var projects = {
         descr: 'My wishlist of movies with filter and search functions. Uses: React, Node.js, MongoDB',
         img: 'img/moviedb.jpg',
         link: 'https://github.com/NIghtCrawlerR/MovieDB-React-Mongo-Node-'
+    },
+    'task-app': {
+        title: 'Task app',
+        descr: 'Application for creating tasks with abbility to create multiple task lists. Uses: Vue.js, Node.js, MongoDB',
+        img: 'img/task-app.jpg',
+        link: 'https://github.com/NIghtCrawlerR/Task-app-Vue-mongo-'
     }
 }
 
@@ -82,7 +88,12 @@ $('.Side-menu li, .navigation_hidden li').click(function () {
             $('.Menu__button__mob').show()
         }
     }, 200)
+})
 
+$('.projects-link').click(function () {
+    $('.sidepage-0').css('left', '0');
+    $('.sidepage-0').addClass('sidepage--active');
+    $('body').addClass('blur');
 })
 
 $('.Menu__button__mob').click(function () {
