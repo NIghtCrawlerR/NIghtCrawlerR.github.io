@@ -1,160 +1,162 @@
-let game = document.querySelector('.game');
-let player = document.querySelector('.player');
-let gameScore = document.querySelector('.score');
+let canvas = document.getElementById('canvas');
+let ctx = canvas.getContext('2d');
 
-//tRex object
-const gameController = {
-    score: 0,
-    updateScore: function(){
-        this.score++
-    },
-    render: function(){
-        gameScore.innerHTML = this.score;
-    }
-}
-const tRex = {
-    IMAGE: 'img/trex.png',
-    SIZE: 88,
-    numberOfFrames: 5,
-    currentFrame: 0,
+const trex = {
+    img: 'img/trex.png',
+    width: 88,
+    height: 90,
+
     sourceX: 0,
     sourceY: 0,
-    run: function () {
-        this.sourceX = this.currentFrame * this.SIZE;
-        if (this.currentFrame < this.numberOfFrames) {
+
+    numOfFrames: 5,
+    currentFrame: 0,
+
+    jumpHeight: 90,
+    jumpSpeed: 20,
+    bottomDistance: canvas.height - 90,
+
+    isJump: false,
+    up: false,
+
+    jump: function () {
+        if (this.up) {
+            this.bottomDistance -= this.jumpSpeed;
+            if (this.bottomDistance == this.jumpHeight) {
+                this.up = false;
+            }
+        }
+        else {
+            this.bottomDistance += this.jumpSpeed;
+            if (this.bottomDistance == canvas.height - 90) {
+                this.isJump = false;
+            }
+        }
+    },
+
+    updateAnimation: function () {
+        this.sourceX = this.currentFrame * this.width;
+
+        if (this.currentFrame < this.numOfFrames) {
             this.currentFrame++;
         }
         else {
             this.currentFrame = 0;
         }
-    },
-    render: function () {
-        player.style.bottom = this.sourceY + 'px';
-    },
-    fall: function () {
-        this.sourceY = 0;
-        this.render();
-    },
-    jump: function () {
-        this.sourceY = 100;
-        this.render();
-        let self = this;
-        setTimeout(function () {
-            self.fall();
-        }, 700)
-    }
-
-}
-
-const updateAnimation = () => {
-    tRex.run();
-    gameController.updateScore();
-    gameController.render();
-    player.style.backgroundPositionX = tRex.sourceX + 'px'
-}
-
-(function animationLoop() {
-    setTimeout(function () {
-        animationLoop();
-        updateAnimation();
-    }, 50);
-}());
-
-const keyPressHandler = (e) => {
-    let code = e.keyCode;
-    if (code == 32) {
-        tRex.jump();
     }
 }
-window.addEventListener('keydown', keyPressHandler, false);
 
-function Barrier(step, offsetLeft) {
-    this.step = step;
-    this.offsetLeft = offsetLeft;
-}
-// Barrier.prototype.render = function () {
-//     _barrier.style.left = this.offsetLeft + 'px'
-// }
-// var interval;
-// Barrier.prototype.move = function () {
-//     this.offsetLeft = this.offsetLeft - this.step;
-//     console.log(this.offsetLeft)
+function Barrier() {
+    this.img = 'img/barrier.png',
+        this.width = 47,
+        this.height = 96,
+        this.speed = 20,
 
-//     this.render();
-// }
-Barrier.prototype.createBarrier = function () {
-    _barrier = document.createElement('div');
-    _barrier.className = 'barrier';
-    game.appendChild(_barrier);
-    
-    //this.render();
-}
+        this.numOfFrames = 5,
+        this.currentFrame = 0,
 
+        this.coordX = canvas.width - this.width,
 
+        this.sourceX = this.currentFrame * this.width,
 
-
-
-
-// setInterval(function () {
-//     for (let i = 0; i <= 3; i++) {
-//         (function (ind) {
-//             setTimeout(function () {
-//                 let barrier = new Barrier(10, 950)
-//                 barrier.createBarrier()
-
-//             }, 1000 + (3000 * ind));
-//         })(i);
-//     }
-// }, 5000)
-
-
-
-
-////////
-let interval;
-
-const moveBarrier = (i) => {
-    let step = 8;
-    let playerCoordRight = player.getBoundingClientRect().right; 
-    let playerCoordBottom = player.getBoundingClientRect().bottom; 
-
-    document.querySelectorAll('.barrier').forEach(function(item){
-        let offset = item.offsetLeft;
-        item.style.left = (offset - step) + 'px'
-        let barrierCoordLeft = item.getBoundingClientRect().left;
-        let barrierCoordTop = item.getBoundingClientRect().top;
-
-        if(barrierCoordLeft <= playerCoordRight && playerCoordBottom > barrierCoordTop){
-            alert('game over')
-            clearInterval(interval)
+        this.move = function () {
+            this.coordX -= this.speed;
         }
+}
 
-    if (item.offsetLeft < 0) {
-        item.remove();
-        clearInterval(interval)
+
+function drawTrex() {
+    ctx.drawImage(trexImg,
+        trex.sourceX, trex.sourceY, trex.width, trex.height,
+        0, trex.bottomDistance, trex.width, trex.height);
+}
+
+var barrier = new Barrier();
+var barrier2;
+setTimeout(() => {
+    barrier2 = new Barrier();
+}, 1000);
+let barriers = [];
+
+// function createBarriers(n){
+//     for(let i = 0; i < n; i++){
+//         barriers[i] = new Barrier();
+//     }
+//     return barriers;
+// }
+// console.log(createBarriers(10))
+
+function drawBarrier() {
+    ctx.drawImage(barrierImg,
+        0, 0, barrier.width, barrier.height,
+        barrier.coordX, canvas.height - barrier.height, barrier.width, barrier.height)
+    if(barrier2){
+        ctx.drawImage(barrierImg,
+            0, 0, barrier2.width, barrier2.height,
+            barrier2.coordX, canvas.height - barrier2.height, barrier2.width, barrier2.height)
     }
-    })
-
-}
-/////////
-var barrier;
-
-const appendBarrier = () => {
-    barrier = document.createElement('div');
-    barrier.className = 'barrier';
-    game.appendChild(barrier);
-
-    interval = setInterval(function(){moveBarrier()}, 70)
 }
 
-(function loop() {
-    var rand = Math.round(Math.random() * (3000 - 1100)) + 1100;
-    setTimeout(function () {
-        appendBarrier();
-        loop();
-    }, rand);
-}());
+
+
+const render = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawTrex();
+
+    drawBarrier();
+}
+
+
+
+loadHandler = () => {
+    render();
+    drawBarrier();
+}
+
+let trexImg = new Image();
+let barrierImg = new Image();
+trexImg.addEventListener('load', loadHandler, false);
+barrierImg.addEventListener('load', loadHandler, false);
+trexImg.src = trex.img;
+barrierImg.src = barrier.img;
+
+
+
+updateAnimation = () => {
+    setTimeout(() => {
+        updateAnimation();
+    }, 70);
+    trex.updateAnimation();
+    if (trex.isJump) {
+
+        trex.jump();
+    }
+    barrier.move();
+    if(barrier2){
+        barrier2.move();
+        if (barrier2.coordX < 0) {
+            barrier2  .coordX = canvas.width;
+        }
+    }
+    if (barrier.coordX < 0) {
+        barrier.coordX = canvas.width;
+    }
+    //console.log(barrier.coordX)
+    render();
+}
+
+
+updateAnimation();
 
 
 
 
+//events
+keyDownHandler = (e) => {
+    if (e.keyCode == 32) {
+        trex.up = true;
+        trex.isJump = true;
+
+    }
+}
+document.addEventListener("keydown", keyDownHandler);

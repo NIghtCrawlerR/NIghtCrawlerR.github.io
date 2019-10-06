@@ -1,72 +1,3 @@
-var projects = {
-    'proteyfx': {
-        title: 'Protey FX',
-        descr: 'Protey FX is one of the most secure online trading environments available anywhere in the forex industry. Uses: Joomla CMS, JQuery, Less. Fully adaptive and crossbrowser.',
-        img: 'img/proteyfx.jpg',
-        link: 'https://proteyfx.com/'
-    },
-    'juka': {
-        title: 'Jukamarket',
-        descr: 'Uses: Joomla CMS, JQuery, Less. Fully adaptive and crossbrowser.',
-        img: 'img/juka.jpg',
-        link: 'https://jukamarket.com/'
-    },
-    'albatros': {
-        title: 'Albatros',
-        descr: 'Uses: Joomla CMS, JQuery, Less. Fully adaptive and crossbrowser.',
-        img: 'img/albatros.jpg',
-        link: 'http://albatros.ua/'
-    },
-    'flyglobus': {
-        title: 'FlyGlobus',
-        descr: 'Web site to search and buy tickets. Uses: Joomla CMS, JQuery, Less. Fully adaptive and crossbrowser.',
-        img: 'img/flyglobus.png',
-        link: 'https://flyglobus.com'
-    },
-    'otp': {
-        title: 'OTP pension calculator',
-        descr: 'Use this app to calculate the amount of investment. Uses: Joomla CMS, JQuery, Less. Fully adaptive and crossbrowser.',
-        img: 'img/otp-calc.jpg',
-        link: 'http://otppension.com.ua/state-pension-calculator'
-    },
-    'segodnya': {
-        title: 'Calculator of economic heating',
-        descr: 'Uses: Joomla CMS, JQuery, Less. Fully adaptive and crossbrowser.',
-        img: 'img/segodnya-calc.jpg',
-        link: 'https://www.segodnya.ua/kalkulyatorotoplenie.html'
-    },
-    'tick-tack-toe': {
-        title: 'Sci-Fi Tick Tack Toe',
-        descr: '',
-        img: 'img/tick-tack-toe.jpg',
-        link: 'https://nightcrawlerr.github.io/tick-tack-toe/'
-    },
-    'last-treasure': {
-        title: 'Game Last Treasure',
-        descr: 'Go on adventure in a mistery forest. This is my first game made only with JavaScript.',
-        img: 'img/last-treasure.jpg',
-        link: 'https://nightcrawlerr.github.io/game-last-treasure/'
-    },
-    'timer': {
-        title: 'Timer',
-        descr: 'JavaScript timer with loops and share functions.',
-        img: 'img/timer.png',
-        link: 'https://github.com/NIghtCrawlerR/js-timer'
-    },
-    'moviedb': {
-        title: 'Movie Database',
-        descr: 'My wishlist of movies with filter and search functions. Uses: React, Node.js, MongoDB',
-        img: 'img/moviedb.jpg',
-        link: 'https://github.com/NIghtCrawlerR/MovieDB-React-Mongo-Node-'
-    },
-    'task-app': {
-        title: 'Task app',
-        descr: 'Application for creating tasks with abbility to create multiple task lists. Uses: Vue.js, Node.js, MongoDB',
-        img: 'img/task-app.jpg',
-        link: 'https://github.com/NIghtCrawlerR/Task-app-Vue-mongo-'
-    }
-}
-
 
 $('.wrapper-menu').click(function () {
     $('.Side-menu').toggleClass('Side-menu--active');
@@ -139,14 +70,15 @@ function selectProject(name) {
     $('.Project__image').css('background-image', 'url(' + projects[name].img + ')')
     $('.link_to_project').attr('href', projects[name].link)
 }
+selectProject('moviedb')
 var ctx = document.getElementById('myChart').getContext('2d');
 ctx.height = 500;
 var myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
-        labels: ['HTML', 'CSS/LESS', 'Bootstrap', 'JavaScript (jQuery)', 'React', 'Gulp', 'Git', 'Node.js', 'MongoDB'],
+        labels: ['HTML', 'CSS/SCSS', 'Bootstrap', 'JavaScript (jQuery)', 'React', 'Vue.js', 'Vuetify', 'Gulp', 'Git', 'Node.js', 'MongoDB'],
         datasets: [{
-            data: [10, 10, 8, 7, 5, 4, 5, 4, 4],
+            data: [10, 10, 8, 7, 5, 7, 6, 4, 8, 5, 4],
             backgroundColor: 'rgba(255, 148, 0, .6)',
             //backgroundColor: 'rgba(34, 170, 253, .5)',
             borderColor: '#FF9400',
