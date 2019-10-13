@@ -15,10 +15,6 @@ window.onload = function () {
         placeholder: "MM/YY"
     });
 
-    function $get(selector) {
-        return document.querySelectorAll(selector)
-    }
-
     function isValid() {
         var errors = 0;
         $('[reqval]').each(function () {
@@ -53,7 +49,7 @@ window.onload = function () {
 
     checkbox.addEventListener('change', function () {
         $('.optional-field').toggleClass('hidden')
-        $get('[name=card-email]')[0].toggleAttribute('reqval')
+        document.querySelector('[name=card-email]').toggleAttribute('reqval')
     })
 
     form.addEventListener('submit', function (e) {
@@ -70,5 +66,4 @@ window.onload = function () {
     })
 
     $('.clear-form').click(function () { clearForm() })
-
 }

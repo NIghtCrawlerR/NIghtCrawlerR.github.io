@@ -3,7 +3,6 @@ html, body {
 }
 
 body {
-    /* background: #182435; */
     background: rgb(0,18,36);
     background: linear-gradient(90deg, rgba(0,18,36,1) 0%, rgba(9,61,121,1) 63%, rgba(11,92,153,1) 100%);
     font-family: 'Roboto', sans-serif;
@@ -11,7 +10,6 @@ body {
 }
 
 .hidden {
-    /* display: none; */
     visibility: hidden;
 }
 
@@ -115,11 +113,10 @@ body {
     border-top: 10px solid #ffffff;
     width: 80px;
     height: 80px;
-    -webkit-animation: spin 1s linear infinite; /* Safari */
+    -webkit-animation: spin 1s linear infinite;
     animation: spin 1s linear infinite;
   }
   
-  /* Safari */
   @-webkit-keyframes spin {
     0% { -webkit-transform: rotate(0deg); }
     100% { -webkit-transform: rotate(360deg); }
